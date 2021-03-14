@@ -49,3 +49,18 @@
 
 (define (sqrt x)
   (sqrt-iter 1.0 x))
+
+;;; Ex 1.2
+
+(/ (+ 5 4 
+    (- 2 
+    (- 3 
+    (+ 6 4/5)))
+  )
+  (* 3 (- 6 2) (- 2 7 )))
+
+;;; Ex 1.3
+
+(define (sum-of-2-biggest-squares a b c) (cond ((and (< a b) (< a c)) (sum-of-squares b c))
+                        ((and (< b c) (< b a)) (sum-of-squares a c))
+                        (else (sum-of-squares a b))))
