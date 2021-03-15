@@ -64,3 +64,18 @@
 (define (sum-of-2-biggest-squares a b c) (cond ((and (< a b) (< a c)) (sum-of-squares b c))
                         ((and (< b c) (< b a)) (sum-of-squares a c))
                         (else (sum-of-squares a b))))
+
+;;; Ex 1.8
+
+(define (cbrt x)
+  (define (cube x) (* x x x))
+  (define (sqr x) (* x x))
+  (define (cbrt-iter guess)
+    (define (improve) 
+      (/ (+ (/ x (sqr guess)) (* 2 guess)) 3))
+    (define (good-enough? guess) 
+      (< (abs (- (cube guess) x)) 0.001))
+    (if (good-enough? guess) guess (cbrt-iter (improve))))
+
+  (cbrt-iter 1.0)
+)  
