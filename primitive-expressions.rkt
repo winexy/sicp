@@ -78,4 +78,10 @@
     (if (good-enough? guess) guess (cbrt-iter (improve))))
 
   (cbrt-iter 1.0)
-)  
+) 
+
+;;; Factorial
+;;; Ex ??
+(define (fact-iter acc count n) (
+  if (> count n) acc (fact-iter (* acc count) (+ 1 count) n)
+))
